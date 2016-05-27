@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.changgg.elderstalk">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <!-- Internet Permission - -->
+    <!-- If you are using MediaPlayer to stream network-based content, -->
+    <!-- your application must request network access. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Wake Lock Permission - -->
+    <!-- If your player application needs to keep the screen from dimming or -->
+    <!-- the processor from sleeping, or uses the MediaPlayer.setScreenOnWhilePlaying() or -->
+    <!-- MediaPlayer.setWakeMode() methods, you must request this permission. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Service.RadioService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>
